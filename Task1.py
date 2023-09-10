@@ -3,24 +3,15 @@
 #Пользователь вводит 2 числа. n – кол – во элементов первого  множества. m – кол – во элементов второго множества.
 #Затем пользователь вводит сами элементы множеств. (Попробуйте использовать множества и их пересечение).
 
+# не могу найти ошибку, почему выдает на 1 элемент меньше. Если задать 6 элементов, то выдает 5???
 
-mol = [int(x) for x in input().split()]
-n = mol[0]
-m = mol[1]
-myset_1 = set()
-myset_2 = set()
-list_1 = list()
-a = [int(x) for x in input().split()]
-k = set(a)
-for i in k:
-    myset_1.add(i)
-b = [int(x) for x in input().split()]
-k1 = set(b)
-for i in k1:
-    myset_2.add(i)
-lok = myset_1 & myset_2
-kool = list(lok)
-kool.sort()
-for i in kool:
-    print(i, end=' ')
+from random import randint
 
+set_n = set(randint(1, 100) for i in range(int(input('Введите количество элементов первого множества: '))))
+print(set_n)
+
+set_m = set(randint(1, 100) for i in range(int(input('Введите количество элементов второго множества: '))))
+print(set_m)
+
+set_sort = sorted(set_n.intersection(set_m))
+print(*set_sort)
